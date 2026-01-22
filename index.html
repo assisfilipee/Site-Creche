@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Mundo Mágico | Creche Domiciliar</title>
+    <meta name="description"
+        content="Educação infantil com carinho, segurança e experiências lúdicas para crianças. Agende uma visita!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<!-- Botões flutuantes -->
+<div class="floating-buttons">
+    <a href="#inicio" class="btn-float btn-top hidden" id="btnTop" aria-label="Voltar ao topo">
+        ↑
+    </a>
+
+    <a href="https://wa.me/5551994394121" target="_blank" class="btn-float btn-whatsapp" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+
+
+
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__left">
+                <span class="dot"></span>
+                <span>Seg–Sex: 7h às 19h</span>
+            </div>
+
+            <div class="topbar__right">
+                <a class="topbar__link" href="tel:+5551994394121">(51) 99439.4121</a>
+                <span class="sep">•</span>
+                <a class="topbar__link" href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a>
+                <span class="sep">•</span>
+                <a class="pill" href="#contato">Agendar visita</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="inicio">
+        <div class="container header__inner">
+            <a class="brand" href="#inicio" aria-label="Página inicial">
+                <img src="./img/logo.webp" alt="Logo Mundo Mágico - Creche Domiciliar" />
+            </a>
+
+            <nav class="nav" aria-label="Navegação principal">
+                <a href="#sobre">Quem somos</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#rotina">Rotina</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#avisos">Avisos</a>
+                <a href="#contato" class="btn btn--small">Contato</a>
+            </nav>
+
+            <!-- Menu mobile (CSS-only) -->
+            <input type="checkbox" id="menuToggle" class="menuToggle" aria-label="Abrir menu" />
+            <label class="burger" for="menuToggle" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="navMobile" aria-label="Menu mobile">
+                <a href="#sobre" onclick="document.getElementById('menuToggle').checked=false">Quem somos</a>
+                <a href="#diferenciais" onclick="document.getElementById('menuToggle').checked=false">Diferenciais</a>
+                <a href="#rotina" onclick="document.getElementById('menuToggle').checked=false">Rotina</a>
+                <a href="#galeria" onclick="document.getElementById('menuToggle').checked=false">Galeria</a>
+                <a href="#avisos" onclick="document.getElementById('menuToggle').checked=false">Avisos</a>
+                <a href="#contato" class="btn" onclick="document.getElementById('menuToggle').checked=false">Falar no
+                    WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="hero">
+        <div class="container hero__grid">
+            <div class="hero__content">
+                <p class="badge">Mundo Mágico • Creche Domiciliar</p>
+                <h1>Educação infantil com carinho, rotina leve e muita brincadeira.</h1>
+                <p class="lead">
+                    Um ambiente acolhedor para desenvolver autonomia, criatividade e segurança emocional — com
+                    acompanhamento
+                    próximo da família.
+                </p>
+
+                <div class="hero__cta">
+                    <a class="btn" href="#contato">Agendar uma Visita</a>
+                    <a class="btn btn--ghost" href="#galeria">Ver Atividades</a>
+                </div>
+
+                <div class="hero__stats">
+                    <div class="stat">
+                        <strong>0–6 anos</strong>
+                        <span>Berçário ao Jardim</span>
+                    </div>
+                    <div class="stat">
+                        <strong>Turmas reduzidas</strong>
+                        <span>mais atenção</span>
+                    </div>
+                    <div class="stat">
+                        <strong>Aprender brincando</strong>
+                        <span>rotina lúdica</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__media" aria-label="Fotos de atividades">
+                <div class="stack carousel" data-carousel>
+                    <div class="carousel__viewport">
+                        <div class="carousel__track">
+                            <div class="carousel__slide">
+                                <img class="photo photo--big" src="./img/acqua-play.webp"
+                                    alt="Criança em atividade de verão (Acqua Play)" loading="lazy" />
+                            </div>
+
+                            <div class="carousel__slide">
+                                <img class="photo photo--big" src="./img/gauchinha.webp"
+                                    alt="Criança em atividade lúdica" loading="lazy" />
+                            </div>
+
+                            <div class="carousel__slide">
+                                <img class="photo photo--big" src="./img/festa-junina.webp" alt="Atividade de pintura"
+                                    loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Foto anterior"
+                        data-carousel-prev>‹</button>
+                    <button class="carousel__btn carousel__btn--next" type="button" aria-label="Próxima foto"
+                        data-carousel-next>›</button>
+
+                    <div class="bubble">
+                        <strong>Atividades Temáticas</strong>
+                        <span>ao longo do ano</span>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+
+    <!-- Sobre -->
+    <section class="section" id="sobre">
+
+        <div class="container grid2">
+            <div>
+                <h2>Quem somos</h2>
+                <p class="text">
+                    A <strong>Mundo Mágico</strong> é um espaço pensado para acolher a infância com afeto e
+                    intencionalidade:
+                    cada detalhe ajuda a criança a explorar, socializar e construir confiança.
+                </p>
+                <p class="text">
+                    Nosso foco é criar experiências reais: brincadeiras dirigidas e livres, musicalização, movimento,
+                    coordenação motora, rodas de conversa e vivências temáticas.
+                </p>
+
+                <div class="chips">
+                    <span class="chip">Acolhimento</span>
+                    <span class="chip">Segurança</span>
+                    <span class="chip">Rotina</span>
+                    <span class="chip">Autonomia</span>
+                    <span class="chip">Família Presente</span>
+                </div>
+            </div>
+
+            <div class="card card--soft">
+                <div class="cardSplit">
+                    
+                    <!-- ESQUERDA: texto -->
+                    <div class="cardSplit__text">
+                        <h3>O que você encontra aqui</h3>
+                        <ul class="list">
+                            <li>Ambiente organizado e lúdico</li>
+                            <li>Atividades pedagógicas + brincadeira</li>
+                            <li>Comunicação diária com a família</li>
+                            <li>Momentos de descanso e alimentação</li>
+                            <li>Datas especiais (páscoa, junina, natal…)</li>
+                        </ul>
+
+                    </div>
+
+                    <!-- DIREITA: imagem grande -->
+                    <div class="cardSplit__media">
+                        <img src="./img/dia-da-diversidade.webp" alt="Atividade na Mundo Mágico" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="section section--alt" id="diferenciais">
+        <div class="container">
+            <header class="section__head">
+                <h2>Diferenciais</h2>
+                <p class="muted">Pontos fortes que ajudam a família a ficar tranquila e a criança a evoluir.</p>
+            </header>
+
+            <div class="cards">
+                <article class="feature">
+                    <div class="icon">🌈</div>
+                    <h3>Aprender brincando</h3>
+                    <p>Atividades lúdicas que estimulam linguagem, coordenação, socialização e criatividade.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">🧸</div>
+                    <h3>Turmas reduzidas</h3>
+                    <p>Mais atenção individual, observação cuidadosa e vínculo afetivo na rotina.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">🫶</div>
+                    <h3>Afeto e acolhimento</h3>
+                    <p>Adaptação respeitosa, segurança emocional e um ambiente calmo para crescer confiante.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">📸</div>
+                    <h3>Família por perto</h3>
+                    <p>Registros e feedbacks frequentes para você acompanhar cada conquista.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rotina -->
+    <section class="section" id="rotina">
+        <div class="container grid2">
+            <div class="card">
+                <h2>Rotina e turnos</h2>
+                <p class="text">
+                    Uma rotina previsível deixa a criança segura — e a gente equilibra cuidados, brincadeiras e
+                    aprendizado.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeItem">
+                        <span class="time">07:00</span>
+                        <div>
+                            <strong>Chegada & acolhimento</strong>
+                            <p>recepção, adaptação, combinados do dia</p>
+                        </div>
+                    </div>
+                    <div class="timeItem">
+                        <span class="time">09:00</span>
+                        <div>
+                            <strong>Atividade dirigida</strong>
+                            <p>propostas pedagógicas e vivências temáticas</p>
+                        </div>
+                    </div>
+                    <div class="timeItem">
+                        <span class="time">11:30</span>
+                        <div>
+                            <strong>Almoço & higiene</strong>
+                            <p>autonomia e cuidado no dia a dia</p>
+                        </div>
+                    </div>
+                    <div class="timeItem">
+                        <span class="time">13:00</span>
+                        <div>
+                            <strong>Descanso</strong>
+                            <p>tempo de pausa e reorganização</p>
+                        </div>
+                    </div>
+                    <div class="timeItem">
+                        <span class="time">15:30</span>
+                        <div>
+                            <strong>Brincadeira livre</strong>
+                            <p>movimento, imaginação, socialização</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="turnos">
+                    <span class="pillTag">Manhã</span>
+                    <span class="pillTag">Tarde</span>
+                    <span class="pillTag">Intermediário</span>
+                    <span class="pillTag">Integral</span>
+                </div>
+            </div>
+
+            <div class="poster">
+                <img src="./img/gauchinha.webp" alt="Dia do Circo - atividade temática" loading="lazy" />
+                <div class="poster__caption">
+                    <strong>Atividades temáticas</strong>
+                    <span>uma proposta especial para cada fase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="section section--alt" id="galeria">
+        <div class="container">
+            <header class="section__head">
+                <h2>Galeria de momentos</h2>
+                <p class="muted">Alguns registros para você sentir o clima do nosso dia a dia.</p>
+            </header>
+
+            <div class="gallery">
+                <figure class="shot">
+                    <img src="./img/dia-da-diversidade.webp" alt="Atividade coletiva - diversidade" loading="lazy" />
+                    <figcaption>Diversidade</figcaption>
+                </figure>
+
+                <figure class="shot">
+                    <img src="./img/dia-do-gaucho.webp" alt="Atividade temática - tradições gaúchas" loading="lazy" />
+                    <figcaption>Tradições</figcaption>
+                </figure>
+
+                <figure class="shot">
+                    <img src="./img/festa-junina.webp" alt="Festa Junina" loading="lazy" />
+                    <figcaption>Festa Junina</figcaption>
+                </figure>
+
+                <figure class="shot">
+                    <img src="./img/pascoa.webp" alt="Páscoa" loading="lazy" />
+                    <figcaption>Páscoa</figcaption>
+                </figure>
+
+                <figure class="shot">
+                    <img src="./img/natal.webp" alt="Natal" loading="lazy" />
+                    <figcaption>Natal</figcaption>
+                </figure>
+
+                <figure class="shot">
+                    <img src="./img/aniversario.webp" alt="Aniversário" loading="lazy" />
+                    <figcaption>Aniversário</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avisos -->
+    <section class="section" id="avisos">
+        <div class="container">
+            <header class="section__head">
+                <h2>Avisos & Novidades</h2>
+                <p class="muted">Espaço para você publicar recados, comunicados e eventos.</p>
+            </header>
+
+            <div class="news">
+                <article class="newsCard">
+                    <div class="newsTag">Evento</div>
+                    <h3>Semana Temática</h3>
+                    <p>Durante a semana, teremos atividades especiais com brincadeiras, artes e música.</p>
+                    <a href="#contato" class="link">Quero saber mais →</a>
+                </article>
+
+                <article class="newsCard">
+                    <div class="newsTag">Comunicado</div>
+                    <h3>Agenda de Visitas</h3>
+                    <p>Agende um horário para conhecer o espaço e entender como funciona a adaptação.</p>
+                    <a href="#contato" class="link">Agendar visita →</a>
+                </article>
+
+                <article class="newsCard">
+                    <div class="newsTag">Matrículas</div>
+                    <h3>Vagas Abertas</h3>
+                    <p>Matrículas durante o ano mediante disponibilidade. Entre em contato para detalhes.</p>
+                    <a href="#contato" class="link">Falar agora →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container cta__inner">
+            <div>
+                <h2>Quer conhecer a Mundo Mágico?</h2>
+                <p>Chama no WhatsApp e agende uma visita. Vamos amar receber sua família 💛</p>
+            </div>
+            <a class="btn btn--dark"
+                href="https://wa.me/5551994394121?text=Olá!%20Quero%20agendar%20uma%20visita%20na%20Mundo%20Mágico."
+                target="_blank" rel="noopener">
+                Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section" id="contato">
+        <div class="container grid2">
+            <div>
+                <h2>Contato</h2>
+                <p class="text">
+                    Preencha o formulário ou fale direto no WhatsApp. Se quiser, eu também deixo esse bloco pronto para
+                    você
+                    colocar um mapa depois.
+                </p>
+
+                <div class="contactCards">
+                    <div class="contactCard">
+                        <strong>Endereço</strong>
+                        <span>Rua Exemplo, 123 — Bairro — Cidade/UF</span>
+                    </div>
+                    <div class="contactCard">
+                        <strong>Horário</strong>
+                        <span>Segunda a sexta — 7h às 19h</span>
+                    </div>
+                    <div class="contactCard">
+                        <strong>WhatsApp</strong>
+                        <span>(51) 99439-4121</span>
+                    </div>
+                    <div class="contactCard">
+                        <strong>Instagram</strong>
+                        <span>@mundo.magico.creche</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form card" action="#" method="post">
+                <h3>Fale com a gente</h3>
+
+                <label>
+                    <span>Nome</span>
+                    <input type="text" name="nome" placeholder="Seu nome" required />
+                </label>
+
+                <label>
+                    <span>E-mail</span>
+                    <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
+                </label>
+
+                <label>
+                    <span>Telefone</span>
+                    <input type="tel" name="tel" placeholder="(00) 00000-0000" />
+                </label>
+
+                <label>
+                    <span>Mensagem</span>
+                    <textarea name="mensagem" rows="5" placeholder="Conte rapidinho o que você precisa 🙂"
+                        required></textarea>
+                </label>
+
+                <button class="btn" type="submit">Enviar mensagem</button>
+
+                <p class="tiny">
+                    *Depois você pode integrar com FormSubmit, Netlify Forms, Google Forms, etc.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <img src="./img/logo.webp" alt="Logo Mundo Mágico" />
+                <p>Educação infantil com carinho.</p>
+            </div>
+
+            <div class="footer__cols">
+                <div>
+                    <strong>Menu</strong>
+                    <a href="#sobre">Quem somos</a>
+                    <a href="#diferenciais">Diferenciais</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#contato">Contato</a>
+                </div>
+
+                <div>
+                    <strong>Contato</strong>
+                    <a href="tel:+5551994394121">(51) 99439-4121</a>
+                    <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a>
+                    <a href="https://wa.me/5551994394121" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <span>© 2026 Mundo Mágico — todos os direitos reservados.</span>
+                <span class="muted">© Criado por Filipe Assis</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btnTop = document.getElementById('btnTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnTop.classList.add('show');
+                btnTop.classList.remove('hidden');
+            } else {
+                btnTop.classList.add('hidden');
+                btnTop.classList.remove('show');
+            }
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
