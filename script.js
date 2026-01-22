@@ -42,3 +42,35 @@
   goTo(0);
   startAuto();
 })();
+
+// Botão "Voltar ao topo"
+document.addEventListener("DOMContentLoaded", () => {
+  const btnTop = document.getElementById("btnTop");
+  if (!btnTop) return;
+
+  const toggleBtnTop = () => {
+    if (window.scrollY > 300) {
+      btnTop.classList.add("show");
+      btnTop.classList.remove("hidden");
+    } else {
+      btnTop.classList.add("hidden");
+      btnTop.classList.remove("show");
+    }
+  };
+
+  window.addEventListener("scroll", toggleBtnTop, { passive: true });
+  toggleBtnTop(); // já ajusta ao carregar (caso a página abra no meio)
+});
+
+
+// Fechar menu mobile ao clicar em links
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menuToggle");
+  if (!toggle) return;
+
+  document.querySelectorAll("[data-close-menu]").forEach((link) => {
+    link.addEventListener("click", () => {
+      toggle.checked = false;
+    });
+  });
+});
