@@ -74,3 +74,93 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const images = Array.from(document.querySelectorAll(".shot img"));
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox .close");
+  const nextBtn = document.querySelector(".lightbox .next");
+  const prevBtn = document.querySelector(".lightbox .prev");
+
+  let currentIndex = 0;
+
+  if (!images.length) return;
+
+  function openLightbox(index){
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden"; // trava scroll
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  function showNext(){
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function showPrev(){
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+  nextBtn.addEventListener("click", showNext);
+  prevBtn.addEventListener("click", showPrev);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // 🔑 TECLADO
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "ArrowLeft") showPrev();
+  });
+
+});
+
+const numeroWhatsApp = "5551991629437"; // 55 + DDD + número (só dígitos)
+
+const form = document.getElementById("zapForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // impede envio padrão do form
+
+  const nome = document.getElementById("nome").value.trim();
+  const mensagem = document.getElementById("msg").value.trim();
+
+  if (!nome || !mensagem) {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
+  const texto =
+    `Olá! Meu nome é ${nome},\n\n` + `${mensagem}`;
+
+  const textoCodificado = encodeURIComponent(texto);
+
+  const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`;
+
+  window.open(linkWhatsApp, "_blank");
+
+  setTimeout(() => {
+  window.location.reload();
+}, 300);
+
+});
+
+
