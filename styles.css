@@ -1,3 +1,6 @@
+/* =========================================================
+   THEME / TOKENS
+========================================================= */
 :root{
   --primary:#feca4c;
   --primary-2:#f7d492;
@@ -14,9 +17,14 @@
   --radius:18px;
   --font-title:"Fredoka", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-body:"Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Acessibilidade: área mínima de toque no mobile */
+  --tap:44px;
 }
 
-/* Base */
+/* =========================================================
+   BASE / RESET
+========================================================= */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -28,11 +36,13 @@ body{
     radial-gradient(900px 500px at 85% 10%, var(--mint) 0%, transparent 55%),
     var(--bg);
 }
-img{max-width:100%;display:block}
+img{max-width:100%;display:block;height:auto}
 a{color:inherit;text-decoration:none}
 .container{width:min(1120px,92%);margin:0 auto}
 
-/* Topbar */
+/* =========================================================
+   TOPBAR
+========================================================= */
 .topbar{
   background:rgba(255,255,255,0.7);
   backdrop-filter:blur(10px);
@@ -80,7 +90,9 @@ a{color:inherit;text-decoration:none}
 }
 .pill:hover{transform:translateY(-1px)}
 
-/* Header */
+/* =========================================================
+   HEADER
+========================================================= */
 .header{
   position:relative;
   z-index:50;
@@ -109,7 +121,9 @@ a{color:inherit;text-decoration:none}
 }
 .nav a:hover{background:rgba(254,202,76,0.18)}
 
-/* Buttons */
+/* =========================================================
+   BUTTONS
+========================================================= */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -140,7 +154,9 @@ a{color:inherit;text-decoration:none}
   box-shadow:0 16px 38px rgba(17,24,39,0.22);
 }
 
-/* Mobile menu */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 .menuToggle{display:none}
 .burger{
   display:none;
@@ -179,7 +195,9 @@ a{color:inherit;text-decoration:none}
 }
 .navMobile a:hover{background:rgba(254,202,76,0.18)}
 
-/* Hero */
+/* =========================================================
+   HERO
+========================================================= */
 .hero{position:relative;padding:46px 0 34px;overflow:hidden}
 .hero__grid{
   display:grid;
@@ -224,8 +242,6 @@ a{color:inherit;text-decoration:none}
 .stat strong{display:block;font-weight:900}
 .stat span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
 
-
-
 /* Carousel (Hero direita) */
 .hero__media{display:flex;justify-content:center}
 .hero__media .stack{
@@ -235,9 +251,8 @@ a{color:inherit;text-decoration:none}
   background:rgba(255,255,255,0.70);
   border:1px solid var(--line);
   box-shadow:var(--shadow);
-
   width:min(460px,100%);
-  height:clamp(520px,46vh,565px); /* ✅ corrigido */
+  height:clamp(520px,46vh,565px);
 }
 .carousel__viewport{height:100%;overflow:hidden;border-radius:18px}
 .carousel__track{
@@ -285,7 +300,9 @@ a{color:inherit;text-decoration:none}
 .bubble strong{display:block;font-weight:900}
 .bubble span{display:block;font-size:14px;opacity:.9;margin-top:2px}
 
-/* Sections */
+/* =========================================================
+   SECTIONS / TYPOGRAPHY
+========================================================= */
 .section{padding:64px 0}
 .section--alt{
   background:rgba(255,255,255,0.55);
@@ -325,7 +342,9 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
   line-height:1.8;
 }
 
-/* Chips */
+/* =========================================================
+   CHIPS
+========================================================= */
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .chip{
   padding:8px 12px;
@@ -337,7 +356,9 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
   color:#3a2a00;
 }
 
-/* Split card (Quem somos) */
+/* =========================================================
+   SPLIT CARD (Quem somos)
+========================================================= */
 .cardSplit{
   display:grid;
   grid-template-columns:1.2fr 0.8fr;
@@ -352,7 +373,9 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
   object-position:center;
 }
 
-/* Diferenciais */
+/* =========================================================
+   DIFERENCIAIS
+========================================================= */
 .cards{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
@@ -377,7 +400,9 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
 }
 .feature p{margin:0;color:var(--muted);line-height:1.7}
 
-/* Timeline */
+/* =========================================================
+   TIMELINE
+========================================================= */
 .timeline{display:grid;gap:12px;margin-top:14px}
 .timeItem{
   display:grid;
@@ -409,7 +434,9 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
   font-weight:900;
 }
 
-/* Poster */
+/* =========================================================
+   POSTER
+========================================================= */
 .poster{
   position:relative;
   border-radius:22px;
@@ -430,21 +457,15 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
 .poster__caption strong{display:block;font-weight:900}
 .poster__caption span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
 
-
-
-
-
-
-
-/* Gallery */
-
+/* =========================================================
+   GALLERY
+========================================================= */
 .gallery{
   display:grid;
   grid-template-columns:repeat(5, minmax(0,1fr));
   gap:10px;
-  cursor: pointer;
+  cursor:pointer;
 }
-
 .shot{
   margin:0;
   background:rgba(255,255,255,0.8);
@@ -452,37 +473,20 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 10px 24px rgba(31,41,55,0.08);
-  transition: box-shadow 0.35s ease;
+  transition:box-shadow 0.35s ease;
 }
-
 .shot img{
   width:100%;
   height:300px;
   object-fit:cover;
-  transition: transform 0.35s ease;
+  transition:transform 0.35s ease;
 }
+.shot:hover{box-shadow:0 18px 40px rgba(31,41,55,0.18)}
+.shot:hover img{transform:scale(1.05)}
 
-.shot:hover{
-  box-shadow:0 18px 40px rgba(31,41,55,0.18);
-}
-
-.shot:hover img{
-  transform: scale(1.05);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* News */
+/* =========================================================
+   NEWS
+========================================================= */
 .news{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -510,7 +514,9 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
 .link{font-weight:900;color:#3a2a00}
 .link:hover{text-decoration:underline}
 
-/* CTA */
+/* =========================================================
+   CTA
+========================================================= */
 .cta{
   padding:42px 0;
   background:linear-gradient(135deg,rgba(254,202,76,0.28),rgba(217,240,255,0.35));
@@ -531,11 +537,39 @@ h3{font-family:var(--font-title);margin:0 0 10px;font-size:22px}
 .cta__inner h2{margin:0 0 6px}
 .cta__inner p{margin:0;color:var(--muted)}
 
-/* Contact */
+/* CTA Instagram */
+.cta-insta{
+  padding:42px 0;
+  background:linear-gradient(
+    135deg,
+    rgba(253, 29, 29, 0.15),
+    rgba(245, 96, 64, 0.15),
+    rgba(252, 175, 69, 0.15),
+    rgba(193, 53, 132, 0.15),
+    rgba(131, 58, 180, 0.15)
+  );
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.cta__inner_insta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  background:rgba(255,255,255,0.9);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
 .contactCards{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
+  gap:14px;
   margin-top:14px;
 }
 .contactCard{
@@ -564,7 +598,29 @@ input:focus,textarea:focus{
 }
 .tiny{margin:12px 0 0;color:var(--muted);font-size:13px}
 
-/* Footer */
+/* Map card */
+.mapCard{
+  grid-column:1 / -1;
+  margin-top:0;
+  padding:0;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 10px 24px rgba(31,41,55,0.08);
+  overflow:hidden;
+}
+.mapIframe{
+  width:100%;
+  height:290px;
+  border:0;
+  display:block;
+}
+.mapInner{padding:10px}
+.mapInner .mapIframe{border-radius:14px}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 .footer{
   padding:34px 0 0;
   border-top:1px solid var(--line);
@@ -607,7 +663,9 @@ input:focus,textarea:focus{
   flex-wrap:wrap;
 }
 
-/* Floating buttons */
+/* =========================================================
+   FLOATING BUTTONS
+========================================================= */
 .floating-buttons{
   position:fixed;
   right:20px;
@@ -637,153 +695,236 @@ input:focus,textarea:focus{
 .hidden{opacity:0;pointer-events:none}
 .show{opacity:1;pointer-events:auto}
 
-/* Responsive */
-@media (max-width:980px){
-  .hero__grid{grid-template-columns:1fr}
-  .grid2{grid-template-columns:1fr}
-  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .news{grid-template-columns:1fr}
-  .cta__inner{flex-direction:column;align-items:flex-start}
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
 }
-@media (max-width:820px){
+.lightbox.active{display:flex}
+.lightbox-img{
+  max-width:min(1100px, 92vw);
+  max-height:88vh;
+  border-radius:16px;
+  animation:zoomIn 0.3s ease;
+}
+.lightbox .close{
+  position:absolute;
+  top:16px;
+  right:20px;
+  font-size:42px;
+  color:#fff;
+  cursor:pointer;
+}
+/* Setas */
+.lightbox .nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:42px;
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+  padding:12px;
+  user-select:none;
+}
+.lightbox .nav.prev{left:20px}
+.lightbox .nav.next{right:20px}
+.lightbox .nav:hover{opacity:0.8}
+
+@keyframes zoomIn{
+  from{transform:scale(0.85);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* =========================================================
+   RESPONSIVE (breakpoints solicitados)
+   Regras: não altera identidade visual / desktop igual.
+========================================================= */
+
+/* ---------------------------------------------------------
+   EXTRA LARGE DEVICES (>= 1200px)
+   (Nada a ajustar: mantém exatamente como está)
+--------------------------------------------------------- */
+@media (min-width:1200px){
+  /* intencionalmente vazio */
+}
+
+/* ---------------------------------------------------------
+   DESKTOP (992px - 1199.98px)
+   Ajustes sutis de densidade sem mexer no layout desktop.
+--------------------------------------------------------- */
+@media (min-width:992px) and (max-width:1199.98px){
+  .container{width:min(1120px,94%)}
+  .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .gallery{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+/* ---------------------------------------------------------
+   TABLET (576px - 991.98px)
+   - Colapsa grids para 1 coluna onde necessário
+   - Mantém textos confortáveis e espaçamentos equilibrados
+--------------------------------------------------------- */
+@media (min-width:576px) and (max-width:991.98px){
+
+  /* Header/Nav */
   .nav{display:none}
   .burger{display:inline-flex}
   .header__inner{position:relative}
   .menuToggle:checked ~ .navMobile{display:block}
+
+  /* Hero */
+  .hero{padding:38px 0 28px}
+  .hero__grid{grid-template-columns:1fr}
+  .hero__media .stack{
+    width:min(520px,100%);
+    height:clamp(460px,52vh,560px);
+  }
+
+  /* Layouts principais */
+  .grid2{grid-template-columns:1fr}
+  .cardSplit{grid-template-columns:1fr}
+  .cardSplit__media img{height:260px}
+
+  /* Diferenciais / cards */
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+  /* Gallery / News */
+  .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .shot img{height:260px}
+  .news{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+  /* CTA */
+  .cta__inner,
+  .cta__inner_insta{flex-direction:column;align-items:flex-start}
+
+  /* Poster */
+  .poster img{height:auto}
+
+  /* Contato */
+  .contactCards{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+  /* Botões: área de toque segura */
+  .btn{min-height:var(--tap)}
+  .burger{min-height:var(--tap);min-width:var(--tap)}
 }
-@media (max-width:520px){
+
+/* ---------------------------------------------------------
+   MOBILE (<= 575.98px)
+   - Tudo em 1 coluna
+   - Botões com toque confortável
+   - Tipografia/espacamentos ajustados sem mudar identidade
+--------------------------------------------------------- */
+@media (max-width:575.98px){
+
+  /* Container e respiros */
+  .container{width:min(1120px,92%)}
+  .section{padding:52px 0}
+  .hero{padding:30px 0 20px}
+
+  /* Topbar: evita “quebra feia” */
+  .topbar__inner{gap:10px;font-size:13px}
+  .topbar__left,.topbar__right{gap:8px}
+
+  /* Header/Nav: mobile menu */
+  .nav{display:none}
+  .burger{display:inline-flex}
+  .header__inner{position:relative}
+  .menuToggle:checked ~ .navMobile{display:block}
+  .brand{width:150px}
+
+  /* Hero */
+  .hero__grid{grid-template-columns:1fr}
+  .hero h1{
+    /* Só em telas pequenas (sem mexer no desktop) */
+    font-size:clamp(28px,8vw,40px);
+    line-height:1.08;
+  }
+  .lead{font-size:16px;line-height:1.75}
+  .hero__cta{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .hero__cta .btn{
+    width:100%;
+    min-height:var(--tap);
+  }
   .hero__stats{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
-  .footer__inner{flex-direction:column}
-  .footer__cols{grid-template-columns:1fr;width:100%}
-}
-@media (max-width:900px){
+
+  /* Carousel: melhora toque e encaixe */
+  .hero__media .stack{
+    padding:12px;
+    height:clamp(380px,54vh,520px);
+  }
+  .carousel__btn{
+    width:var(--tap);
+    height:var(--tap);
+    font-size:24px;
+  }
+  .carousel__btn--prev{left:10px}
+  .carousel__btn--next{right:10px}
+  .bubble{
+    left:12px;
+    right:12px;
+    width:auto;
+  }
+
+  /* Layouts (1 coluna) */
+  .grid2{grid-template-columns:1fr}
   .cardSplit{grid-template-columns:1fr}
   .cardSplit__media img{height:220px}
+
+  /* Diferenciais */
+  .cards{grid-template-columns:1fr}
+
+  /* Timeline: deixa mais confortável */
+  .timeItem{grid-template-columns:64px 1fr}
+  .time{height:38px}
+
+  /* Gallery */
+  .gallery{grid-template-columns:1fr}
+  .shot img{height:220px}
+
+  /* News */
+  .news{grid-template-columns:1fr}
+
+  /* CTA */
+  .cta__inner,
+  .cta__inner_insta{flex-direction:column;align-items:flex-start}
+
+  /* Contato */
+  .contactCards{grid-template-columns:1fr}
+  input,textarea{min-height:var(--tap)}
+  .btn--small{min-height:var(--tap)}
+
+  /* Footer */
+  .footer__inner{flex-direction:column}
+  .footer__cols{grid-template-columns:1fr;width:100%}
+  .footer__brand img{width:170px}
+
+  /* Floating buttons: ligeiramente menores pra não cobrir conteúdo */
+  .floating-buttons{right:14px;bottom:14px;gap:10px}
+  .btn-float{width:46px;height:46px}
+
+  /* Lightbox */
+  .lightbox .close{top:12px;right:14px}
+  .lightbox .nav{font-size:38px;padding:10px}
+  .lightbox .nav.prev{left:10px}
+  .lightbox .nav.next{right:10px}
 }
 
-
-
-
-.lightbox{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-}
-
-.lightbox.active{
-  display: flex;
-}
-
-.lightbox-img{
-  max-width: min(1100px, 92vw);
-  max-height: 88vh;
-  border-radius: 16px;
-}
-
-.lightbox .close{
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  font-size: 42px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* Setas */
-.lightbox .nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 42px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  padding: 12px;
-  user-select: none;
-}
-
-.lightbox .nav.prev{ left: 20px; }
-.lightbox .nav.next{ right: 20px; }
-
-.lightbox .nav:hover{
-  opacity: 0.8;
-}
-
-.lightbox-img{
-  animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn{
-  from{ transform: scale(0.85); opacity:0 }
-  to{ transform: scale(1); opacity:1 }
-}
-
-/* Card do mapa (a caixa branca) */
-.mapCard{
-  grid-column: 1 / -1;   /* 🔥 ocupa todas as colunas */
-  margin-top: 0;
-  padding: 0;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: 0 10px 24px rgba(31,41,55,0.08);
-  overflow: hidden;
-}
-
-/* Mapa dentro do card */
-.mapIframe{
-  width: 100%;
-  height: 290px;         /* 🔥 ajuste aqui a altura */
-  border: 0;
-  display: block;
-}
-.mapInner{
-  padding: 10px;        /* moldura interna */
-}
-
-.mapInner .mapIframe{
-  border-radius: 14px;  /* arredonda o mapa por dentro */
-}
-
-.contactCards{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-
-/* CTA */
-.cta-insta{
-  padding: 42px 0;
-  background: linear-gradient(
-    135deg,
-    rgba(253, 29, 29, 0.15),
-    rgba(245, 96, 64, 0.15),
-    rgba(252, 175, 69, 0.15),
-    rgba(193, 53, 132, 0.15),
-    rgba(131, 58, 180, 0.15)
-  );
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-/* 🔥 EXTRA – card branco por cima do degradê */
-.cta__inner_insta{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 18px;
-
-  box-shadow: var(--shadow);
+/* ---------------------------------------------------------
+   AJUSTE COMPLEMENTAR (qualquer tela < 992px)
+   - Garante que os grids críticos não “quebrem”
+   - Sem mexer em desktop grande
+--------------------------------------------------------- */
+@media (max-width:991.98px){
+  .poster img{height:auto}
 }
